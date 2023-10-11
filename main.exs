@@ -118,8 +118,7 @@ defmodule TreeGenerator do
 end
 
 
-
-tree = TreeGenerator.generate_tree(10)
+tree = TreeGenerator.generate_tree(8)
 IO.puts("Arvore original: ")
 IO.inspect(tree)
 arvore = DepthFirst.depthFirst(tree.key, tree, 1, DepthFirst.scale())
