@@ -1,7 +1,5 @@
 defmodule SyntaticTree do
   defstruct operator: nil, left: nil, right: nil
-
-  defstruct state: nil, left: nil, right:nil, op:nil
   
   def leaf do
     :leaf
@@ -10,8 +8,6 @@ defmodule SyntaticTree do
   def tree(key, left \\ leaf(), right \\ leaf()) do
     %Tree{key: key, val: val, left: left, right: right}
   end
-
-  def retNode()
 end
 # [cabeça | cauda] = s1
 # case  
@@ -19,8 +15,6 @@ end
 # tupla= {true false(is atom), atom, resto da lista}
 # head = elem[tupla,0]
 # stat retorna o nó + resto da lista 
-# prog monta nó principal
-# stat monta sub nós
 defmodule Parser do
   def prog(s1) do 
     [head1 | s2] = s1
@@ -43,17 +37,8 @@ defmodule Parser do
   def stat(s1) do
     [t | s2]=s1
     case t do
-      :if -> 
-        {c,s3} = comp(s2)
-        [head4 | s4]=s3
-        if head4 == :then do
-          {x1,s5}=stat(s4)
-          [head5 | s6]=s5
-          if head5 == :else do
-            {x2,sn}=stat(s6)
-            
-        end
-        
+      :if ->
+        {?,?}= comp(s2)
         
     end
     
