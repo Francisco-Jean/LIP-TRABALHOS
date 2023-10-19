@@ -120,6 +120,4 @@ end
 declare A Sn in
     A={Prog
     [program foo ';'
-    while a '+' 3 '<' b 'do' b ':=' b '+' 1 'end']
-    Sn}defmodule MinhaModule do defmodule Recursiva do def fatiar_e_acumular(lista, tamanho_da_fatia, acumulador \\ []) do case Enum.split(lista, tamanho_da_fatia) do {fatia, []} -> # Não há mais elementos a serem fatiados, retorna o acumulador e as fatias {:ok, Enum.reverse(acumulador ++ [fatia]), acumulador ++ [fatia]} {fatia, resto} -> # Continua a recursão com o resto da lista fatiar_e_acumular(resto, tamanho_da_fatia, acumulador ++ [fatia]) _ -> {:error, "Tamanho da fatia excede o comprimento da lista"} end end end end #---------------- TESTES---------------------------- lista_original = ["program", "blaba", "fuj"] tamanho_da_fatia = 1 case MinhaModule.Recursiva.fatiar_e_acumular(lista_original, tamanho_da_fatia) do {:ok, fatias, acumulador} -> IO.puts("Sucesso:") Enum.each(fatias, fn(fatia) -> IO.inspect(fatia) end) IO.puts("Acumulador final:") IO.inspect(acumulador) {:error, erro} -> IO.puts("Erro: #{erro}") end #--------------------------------------------------- #primeiro = nil #resto = [] #case lista_original do # [] -> # _ -> # primeiro = hd(lista_original) # resto = tl(lista_original) #end #------------------------------------------- def module stat(lista, tamanho_da_fatia, acumulador \\ []) do lista= [acumulador | lista]
-{Browse A}
+    while a '+' 3 '<' b 'do' b ':=' b '+' 1 'end'] Sn}
