@@ -1,11 +1,5 @@
-# [cabeça | cauda] = s1
-# case  
-# peg o retorno do primeiro if 
-# tupla= {true false(is atom), atom, resto da lista}
-# head = elem[tupla,0]
-# stat retorna o nó + resto da lista 
-# prog monta nó principal
-# stat monta sub nós
+# Dupla:
+# Francisco Jean e Victoria de Castro
 
 
 defmodule Parser do
@@ -75,7 +69,7 @@ defmodule Parser do
         [head5 | s6]=s5
         if head5 == :else do
           {x2,sn}=stat(s6)
-          {NodeState.new(:if, c, x1, x2), sn}
+          {NodeState.new(:if, c, x2, x1), sn}
         else
           {NodeBinario.new(:if, c, x1), s5}
         end
@@ -104,7 +98,7 @@ defmodule Parser do
         [head7|s3] = s2
         if head7 == ':=' do
           {e, sn} = expr(s3)
-          {NodeBinario.new(':=', t, e), sn}
+          {NodeBinario.new('=', t, e), sn}
         else
           raise "token não identificado"
         end
@@ -160,11 +154,7 @@ defmodule Parser do
         [a|sn] = s3
         if a == ')' do
           {e, sn}
-        else
-          raise "entrada incompatível."
         end
-      else
-        raise "entrada incompatível."
       end
     end
   end
@@ -192,7 +182,6 @@ defmodule Parser do
   end
 end
 
-
-programa = [:program, 'progName', ';', :if, :b, '<', 3, :then, :x, ':=', 1, '+', 54, :else, :x, ':=', 1, 'end']
+programa = [:program, 'progJeanVictoria', ';', :if, :b, '<', 3, :then, :x, ':=', 1, '+', 54, :else, :x, ':=', 1, 'end']
 {syntatic, sn} = Parser.prog(programa)
 IO.inspect(syntatic)
