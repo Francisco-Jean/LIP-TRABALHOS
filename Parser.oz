@@ -1,3 +1,5 @@
+% Parser implementado na linguagem Oz
+
 declare
 fun {Prog S1 Sn}
     Y Z S2 S3 S4 S5 
